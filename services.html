@@ -1,0 +1,136 @@
+<html>
+   <head>
+     <title> SERVICES </title>
+	 	 <link href="style.css" rel="stylesheet" type="text/css">
+	 
+	 
+
+   </head>
+   
+   <body>
+   
+   <p>
+     Whether you are envisioning rustic chic or ballroom elegance your wedding will always be distinctively you! Red Letter Event Planning provides a full complement of planning services with expertise in organization, creative styling and attention to detail so that your wedding is all you envisioned.       
+
+Our customized list of services include:
+
+Venue Consultation
+Checklist Development and Management
+Budget Development and Tracking
+Wedding Styling
+Etiquette Consultation
+Vendor Recommendations
+Monthly Planning Meetings
+Concierge Assistance
+Vendor Coordination
+Ceremony and Reception Coordination
+See some of our Sample Packages
+
+(Wedding Coordination starts at $1,750, limited dates are available for these services.  Wedding Planning starts at $3,800)
+
+Ready to get started?
+
+Contact us today!
+
+SOCIAL SOIREÉS
+Whether it is a Sweet 16, a 50th Anniversary Party or a dinner party for
+75 planning an event has many facets and can be overwhelming. You
+will receive recommendations for the best vendors, organization and
+creative ideas to relieve the stress in planning your event so you can
+enjoy your special occasion.
+
+Our Social Soireé Planning Services include:
+
+Day of Management
+Vendor Research and Recommendation
+Advice on Décor Elements
+Budget and Timeline Development
+Menu Assistance
+Invitation Selection, Distribution and RSVP Collection
+Be a guest at your next event! 
+   
+   </p>
+   
+   
+      
+            
+            
+              <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    
+
+    <div id="map"></div>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvybibU7s23-D58Z4_4basp0_C24KIHXc&libraries=places&callback=initMap" async defer></script>
+	<script>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var map;
+      var infowindow;
+    
+      function initMap() {
+        var pyrmont = {lat:23.815103, lng: 90.4233493};
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: pyrmont,
+          zoom: 15
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: pyrmont,
+          radius: 500,
+          type: ['cafe']
+        }, callback);
+      }
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+
+          position: place.geometry.location
+        });
+
+  
+
+        
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(' Turzo ' + '</strong><br>'+  place.name 
+                );
+          infowindow.open(map, this);
+        });
+      }
+    </script>
+
+
+   
+   
+   
+   
+   
+   </body>
+</html>
